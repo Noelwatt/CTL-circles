@@ -13,17 +13,19 @@ circle if its center does so. In the 'simple' version we assume that the circles
 and shown completely. In the 'advanced' version we assume that circles do not overlap, but might
 partially reside outside the image. In the 'expert' version circles may overlap, but are shown completely.
 
+<img src="A1.png" width="30%">
+
 Your circles.py should be able to run if called with a single string argument (filename). Such as
  
       python3 circles.py grids-simple/A1.txt
 
-## Task 1: read_grid(filename)
+## def read_grid(filename)
 
 This function 
 1. reads a binary rows $\times$ columns grid of 0/1 values from a file named filename (see [here](https://github.com/mkmat/ETH-Computational-Thinking-Labs/blob/main/README.md#readwritefile) how to read such file, files containing binary grids are available in the folders grids-simple, grids-advanced, grids-expert)
 2. determines if the grid contains only zeros and ones, if so, returns the grid. If not, returns+exits with -1
 
-## Task 2: visualize_grid(grid)
+## def visualize_grid(grid)
 
 This function
 1. Visualizes the grid (e.g., using matplotlib)
@@ -35,7 +37,7 @@ Example:
      ...
      return OnePixels
      
-## Task 3: analyze_grid_simple(grid)
+## def analyze_grid_simple(grid)
 
 This function can assume that circles are completely contained in the grid and that circles are non-overlapping and separated by at least
 one 0-pixel. Such grids are available in the folder grids-simple.
@@ -50,29 +52,29 @@ Example for a file identified-circles.txt that reports two recognized circles of
        121 63 7.3
        87 140 12.5
 
-## Task 4: read_identified()
+## def read_identified()
 
 1. read the circle centers and their radii contained in identified-circles.txt
 2. create a binary grid based on these circle centers+radii
 3. return the grid
 
-## Task 5: test(filename)
+## def verify_code(filename)
 
 This function makes use of your existing functions and allows you to test your algorithm visually and quantitatively, by comparing the values OnePixels and OnePixelsAnalyzed. The basic structure looks like this: 
 
-    def test(filename):
+    def verify_code(filename):
         grid = read_grid(filename)
         OnePixels = visualize_grid(grid)
         analyze_grid_simple(grid)
         grid = read_identified()
         OnePixelsAnalyzed = visualize_grid(grid)
 
-## Task 6: analyze_grid_advanced(grid)
+## def analyze_grid_advanced(grid)
 
 This function can assume that circles do not overlap. All circle centers can be assumed
 to reside within the image. Otherwise it is identical with Task 3. Such grids are available in the folder grids-advanced.
 
-## Task 7: analyze_grid_expert(grid)
+## def analyze_grid_expert(grid)
 
 This function can assume that circles fully reside within the grid, but this time circles are allowed to overlap.
 Otherwise it is identical with Task 3. Such grids are available in the folder grids-expert.
