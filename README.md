@@ -2,20 +2,18 @@ General information about the CTL course available at https://ctl.polyphys.mat.e
 
 # :wave: PROJECT circles
 
-The goal is to identify amounts, radii, and center positions of filled, eventually overlap-
-ping, or incompletely shown circles in a two-dimensional image reliably and quickly.
-This project operates on a regular grid of binary pixel values (pixel value 1 stands for
-a filled pixel, pixel value 0 stands for an empty pixel). A valid circle has a radius of at
-least 2 pixels, its center resides within the image, and it is not fully contained in a larger
-circle. Both the positions and radii of circles must not be integer-valued, but returned
-with a precision of a single digit (pixel units). A pixel is defined to reside within the
-circle if its center does so. In the 'simple' version we assume that the circles are non-overlapping,
-and shown completely. In the 'advanced' version we assume that circles do not overlap, but might
-partially reside outside the image. In the 'expert' version circles may overlap, but are shown completely.
+The goal is to identify amounts, radii, and center positions of filled, eventually overlapping, or incompletely shown circles in a two-dimensional image reliably and quickly. This project operates on a regular grid of binary pixel values (pixel value 1 stands for a filled pixel, pixel value 0 stands for an empty pixel). A valid circle has a radius of at least 2 pixels, its center resides within the image, and it is not fully contained in a larger circle. Both the positions and radii of circles must not be integer-valued, but returned with a precision of a single digit (pixel units). A pixel is defined to reside within the circle if its center does so. In the 'simple' version we assume that the circles are 
+non-overlapping, and shown completely. In the 'advanced' version we assume that circles do not overlap, but might partially reside outside the image. In the 'expert' version circles may overlap, but are shown completely.
 
-<img src="A1.png" width="30%">
+Test images are available in the respective directories in the present github repository, three of them shown here:
 
-Your circles.py should be able to run if called with a single string argument (filename). Such as
+| grids-simple | grids-advanced | grids-expert | 
+| ------| ---------|--------|
+| <img src="https://ctl.polyphys.mat.ethz.ch/CTL-I-PUBLIC/circles/A0.png" width="100%"> | <img src="https://ctl.polyphys.mat.ethz.ch/CTL-I-PUBLIC/circles/B1.png" width="100%"> | <img src="https://ctl.polyphys.mat.ethz.ch/CTL-I-PUBLIC/circles/C1.png" width="100%"> |
+
+Your task is to create a python code named circles.py that analyzes any of the test images, identifies the amount, size, and center positions of circles. It then writes this information to a file and visualizes both the original image and the recognized image for comparison. 
+
+In its final version this code should be able to take a file name as argument (on the command line) instead of hard-coding the filename inside your circles.py. This final version can then be called from the vscode-Terminal (or a linux shell) via  
  
       python3 circles.py grids-simple/A1.txt
 
