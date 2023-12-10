@@ -13,6 +13,8 @@ Name the most important functions and mention their functionality, i.e., input a
           return ...
 
 ## How to run the code
+## The Code
+
 
 Mention, how to run the code. Mention the parameters, in case your code has command line arguments. 
 
